@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Practice_07_20 : MonoBehaviour
+public class Practice_07_20 : MonoBehaviour     // 유니티 게임 오브젝트 클래스.
 {
 
     // 플레이어와 관련된 데이터를 전역변수(멤버변수)로 선언.
@@ -252,6 +252,24 @@ public class Practice_07_20 : MonoBehaviour
         {
             Debug.Log("용사는 " + monsters[index] + "에게 " + Battle(monsterLevel[index]));
         }
+
+        // 8. 클래스.
+        // 하나의 사물(오브젝트)과 대응하는 로직.
+        // 유니티에서는 대개 하나의 파일에 하나의 클래스를 대응하도록 한다.
+        // 클래스를 상속하면 자식 클래스는 부모 클래스의 멤버변수와 멤버함수를 사용할 수 있다.
+        Player player = new Player();     // 인스턴스화. 정의된 클래스를 변수 초기화로 실체화.
+        player.id = 0;
+        player.name = "나법사";
+        player.title = "현명한";
+        player.strength = 2.4f;
+        player.weapon = "나무 지팡이";
+        Debug.Log(player.Talk());
+        Debug.Log(player.HasWeapon());
+
+        player.LevelUp();
+        Debug.Log(player.name + "의 레벨은 " + player.level + "입니다.");
+        Debug.Log(player.Move());
+
 
     }
 
