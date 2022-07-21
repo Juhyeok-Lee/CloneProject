@@ -26,13 +26,12 @@ namespace Problem0720
             Console.WriteLine("값을 입력하세요.");
             a = int.Parse(Console.ReadLine());          // 입력값.           
             star = "*";                                 // 출력할 문자열.
-            star = star.PadLeft(5);                     // 우측 정렬한 뒤 빈 칸을 공백으로 채움.
+            star = star.PadLeft(a);                     // 우측 정렬한 뒤 빈 칸을 공백으로 채움.
             for (int i = 0; i < a; i++)
             {
                 Console.WriteLine("{0}", star);         
                 star +="*";                             // 문자열의 길이를 늘림.
-                star = star.Trim();                     // 공백문자 제거.
-                star = star.PadLeft(5);                 // 우측 정렬.
+                star = star.Substring(1,a);             // 문자열이 길어진만큼 공백을 잘라냄.
             }
 
             // 문제3. 더하기 문제.
