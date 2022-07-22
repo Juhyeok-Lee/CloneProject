@@ -10,12 +10,12 @@ namespace Problem0720
     {
         static void Main(string[] args)
         {
+            
 
             // 문제1. 별찍기.
-            Console.WriteLine("값을 입력하세요.");
-            int a = int.Parse(Console.ReadLine());      // 입력값.
-            string star = "*";                          // 출력할 문자열.
-
+            Console.WriteLine("값을 입력하세요.");                       
+            int a = int.Parse(Console.ReadLine());      // 입력값.                 
+            string star = "*";                          // 출력할 문자열.                     
             for (int i = 0; i < a; i++)
             {
                 Console.WriteLine("{0}", star);
@@ -24,7 +24,7 @@ namespace Problem0720
 
             // 문제2. 별찍기2.
             Console.WriteLine("값을 입력하세요.");
-            a = int.Parse(Console.ReadLine());          // 입력값.           
+            a = int.Parse(Console.ReadLine());          // 입력값.  */         
             star = "*";                                 // 출력할 문자열.
             star = star.PadLeft(a);                     // 우측 정렬한 뒤 빈 칸을 공백으로 채움.
             for (int i = 0; i < a; i++)
@@ -48,6 +48,7 @@ namespace Problem0720
                 num = (tmp % 10) * 10 + num % 10;       // 초기값의 1의 자리 숫자와 계산값의 1의 자리 숫자를 이어 붙임.
             } while (num != a);                         // 계산값이 입력값과 같아질 때까지 반복.
             Console.WriteLine(count);                   // 사이클이 반복된 숫자를 출력.
+                       
            
         }
     }
