@@ -13,6 +13,7 @@ public class Jumper : MonoBehaviour
     void Start()
     {
         myRigidbody.AddForce(0, 500, 0);    // x,y,z 방향으로 입력한만큼 힘을 줌.
+        
 
 
 
