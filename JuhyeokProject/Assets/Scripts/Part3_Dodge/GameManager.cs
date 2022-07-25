@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;                   // UI 관련 라이브러리.
 using UnityEngine.SceneManagement;      // 씬 관리 관련 라이브러리.
+// using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameoverText;     // 게임오버 시 활성화될 텍스트 오브젝트.
-    public Text timeText;               // 생존 시간을 표시할 텍스트 컴포넌트. Text(Legacy)가 아닌 TMP는 인스펙터에서 Text에 직접 드래그 앤 드롭할 수 없다.
-    public Text recordText;             // 최고 기록을 표시할 텍스트 컴포넌트.
+    public GameObject gameoverText;                   // 게임오버 시 활성화될 텍스트 '오브젝트'.
+    public Text timeText;
+    //  public TextMeshProUGUI timeText;               // 생존 시간을 표시할 텍스트 '컴포넌트'. Text(Legacy)가 아닌 TMP는 인스펙터에서 Text에 직접 드래그 앤 드롭할 수 없다.
+                                                                         // TMP를 사용하고 싶다면 using TMPro; 후, 변수를 Text가 아닌 TextMeshProUGUI로 선언하고 인스펙터창에서 접근할 것.
+    public Text recordText;                                    // 최고 기록을 표시할 텍스트 '컴포넌트'.
 
     private float survivalTime;         // 생존 시간.
     private bool isGameover;            // 게임오버 상태.
