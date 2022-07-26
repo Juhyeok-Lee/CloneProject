@@ -70,6 +70,9 @@ public class PlayerController : MonoBehaviour {
         playerRigidbody.velocity = Vector2.zero;
         // 사망 상태(isDead)를 참으로 변경.
         isDead = true;
+
+        // 게임 매니저 변수 instance의 onPlayerDead() 메소드를 실행.
+        GameManager.instance.OnPlayerDead();
    }
 
    private void OnTriggerEnter2D(Collider2D other) {
