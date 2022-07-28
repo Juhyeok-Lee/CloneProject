@@ -13,21 +13,23 @@ namespace Problem_3
         static StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
         static StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
 
-        static void SquareSierpinski(int _i, int _j, int _N)
+        /** i,j는 시어핀스키 사각형의 (i, j) 원소를 가리킴. 각 원소는 '*' 혹은 ' '의 두 가지 상태를 가질 수 있음.
+         * 시어핀스키 사각형을 그리는 기준이 있으므로 사각형의 차원(N의 세제곱근)이 얼마인지 안다면 (i, j) 원소가 빈 칸인지 아닌지 알 수 있음.
+         */
+        static void SquareSierpinski(int _i, int _j, int _N)                
         {
             if ((int)(_i / _N) % 3 == 1 && (int)(_j / _N) % 3 == 1)
             {
                 sw.Write(" ");
             }
+            else if (_N / 3 < 1)
+            {
+                sw.Write("*");
+            }                    
             else
             {
-                if (_N / 3 < 1)
-                    sw.Write("*");
-                else
-                {
-                    SquareSierpinski(_i, _j, _N / 3);
-                }
-            }
+                SquareSierpinski(_i, _j, _N / 3);
+            }            
         }
 
 
