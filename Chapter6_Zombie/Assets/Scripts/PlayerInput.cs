@@ -9,6 +9,8 @@ public class PlayerInput : MonoBehaviour {
     public string reloadButtonName = "Reload"; // 재장전을 위한 입력 버튼 이름
 
     // 값 할당은 내부에서만 가능
+    // private으로 변수를 선언하면 다른 클래스에서 PlayerInput 클래스 변수를 생성하더라도 해당 클래스의 변수에 값을 할당할 수 없음.
+    // (물론 PlayerInput 클래스는 MonoBehaviour을 상속하고 있기 때문에 컴포넌트 추가로만 접근할 수 있음.)
     public float move { get; private set; } // 감지된 움직임 입력값
     public float rotate { get; private set; } // 감지된 회전 입력값
     public bool fire { get; private set; } // 감지된 발사 입력값
@@ -23,10 +25,10 @@ public class PlayerInput : MonoBehaviour {
             rotate = 0;
             fire = false;
             reload = false;
-            return;
+            return;     // 게임 오버 상태에선 업데이트 함수를 return해버림.
         }
 
-        // move에 관한 입력 감지
+        // move에 관한 입력 감지. 축에 대한 입력 정보를 1~-1사이의 값으로 리턴함.
         move = Input.GetAxis(moveAxisName);
         // rotate에 관한 입력 감지
         rotate = Input.GetAxis(rotateAxisName);
@@ -34,5 +36,9 @@ public class PlayerInput : MonoBehaviour {
         fire = Input.GetButton(fireButtonName);
         // reload에 관한 입력 감지
         reload = Input.GetButtonDown(reloadButtonName);
+               
+                
     }
+
+    
 }

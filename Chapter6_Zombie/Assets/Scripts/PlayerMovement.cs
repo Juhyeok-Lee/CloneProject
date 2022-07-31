@@ -42,7 +42,8 @@ public class PlayerMovement : MonoBehaviour {
          * Rigidbody를 이용하는 방법은 다시 MovePosition() 메소드를 사용하는 방법과 직접 포지셔닝하는 방법이 있다.
          * MovePosition()을 이용하면 보간을 고려하기 때문에 자연스러운 움직임을 구현할 수 있다.
          * 그러므로 연속적인 이동을 구현해야 한다면 MovePosition()을 사용하는 것이 좋다. */
-        Vector3 moveDistance = Vector3.forward * moveSpeed * Time.deltaTime * playerInput.move;
+        // transform.forward는 현재 오브젝트가 바라보고 있는 정면을 월드 좌표 기준으로 반환한다.
+        Vector3 moveDistance = transform.forward * moveSpeed * Time.deltaTime * playerInput.move;        
         /** MovePosition() 메소드는 매개변수로 상대위치가 아닌 전역위치를 받는다.
          * 그러므로 의도한 바와 같이 플레이어 오브젝트가 현재 위치로부터 이동한 거리를 받으려면,
          * 매개변수에 오브젝트의 현재 위치를 더하여 전달해야 한다. */
