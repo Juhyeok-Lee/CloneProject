@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 public class RotateCam : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     public GameObject player;
+    public GameObject boss;
+    public GameObject cam;
     public Transform camPivot;
     public float rotationSpeed = 0.4f;
 
@@ -20,9 +22,10 @@ public class RotateCam : MonoBehaviour, IBeginDragHandler, IDragHandler
         yAngle = camPivot.rotation.eulerAngles.y;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         camPivot.position = player.transform.position;
+        cam.transform.position = (boss.transform.position - player.transform.position).normalized * -2;
     }
 
     public void OnBeginDrag(PointerEventData beginPoint)

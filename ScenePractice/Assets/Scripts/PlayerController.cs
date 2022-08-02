@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float _moveSpeed;
 
-    public Transform cam;
+    public Transform camAxis;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            transform.forward = cam.forward;
+            transform.forward = camAxis.forward;
             _rigidbody.velocity = transform.localRotation * new Vector3(
                 _joystick.Horizontal * Time.deltaTime * 100f, 0,
                 _joystick.Vertical * Time.deltaTime * 100f);
